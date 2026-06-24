@@ -19,7 +19,7 @@ function updateButton(theme) {
     toggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
-// ===== АККОРДЕОН "О ПРИЛОЖЕНИИ" =====
+// ===== АККОРДЕОН =====
 const accordionBtn = document.getElementById('accordionBtn');
 const accordionContent = document.getElementById('accordionContent');
 let isOpen = false;
@@ -46,4 +46,4 @@ accordionBtn.addEventListener('click', () => {
     }
 });
 
-console.log('🚀 Paroshvabry лендинг загружен!');
+console.log('🚀 Burmaldamop лендинг загружен!');
