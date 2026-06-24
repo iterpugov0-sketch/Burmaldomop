@@ -393,13 +393,69 @@ body {
     padding: 18px 32px;
     border-radius: 18px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     border: 2px solid transparent;
     min-width: 200px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* ===== ОБЩАЯ ПОДСВЕТКА (GLOW) ДЛЯ КНОПОК ===== */
+.download-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+/* Windows — синяя подсветка */
+.download-btn.windows {
+    border-color: #0d47a1;
+    background: rgba(13, 71, 161, 0.08);
+}
+
+.download-btn.windows::before {
+    background: radial-gradient(circle at 50% 50%, rgba(13, 71, 161, 0.35), transparent 70%);
+}
+
+.download-btn.windows:hover {
+    background: rgba(13, 71, 161, 0.18);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 25px rgba(13, 71, 161, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn.windows:hover::before {
+    opacity: 1;
+}
+
+/* Android — голубая подсветка */
+.download-btn.android {
+    border-color: #42a5f5;
+    background: rgba(66, 165, 245, 0.08);
+}
+
+.download-btn.android::before {
+    background: radial-gradient(circle at 50% 50%, rgba(66, 165, 245, 0.35), transparent 70%);
+}
+
+.download-btn.android:hover {
+    background: rgba(66, 165, 245, 0.18);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 0 25px rgba(66, 165, 245, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.download-btn.android:hover::before {
+    opacity: 1;
+}
+
+/* ===== СТАРЫЙ ЭФФЕКТ (оставляем для совместимости) ===== */
 .download-btn::after {
     content: '';
     position: absolute;
@@ -407,36 +463,13 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 60%);
     opacity: 0;
     transition: 0.4s;
 }
 
 .download-btn:hover::after {
     opacity: 1;
-}
-
-.download-btn:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-}
-
-.download-btn.windows {
-    border-color: #0d47a1;
-    background: rgba(13, 71, 161, 0.08);
-}
-
-.download-btn.windows:hover {
-    background: rgba(13, 71, 161, 0.18);
-}
-
-.download-btn.android {
-    border-color: #42a5f5;
-    background: rgba(66, 165, 245, 0.08);
-}
-
-.download-btn.android:hover {
-    background: rgba(66, 165, 245, 0.18);
 }
 
 .btn-icon {
