@@ -47,14 +47,14 @@ body {
     background: #e2e8f0;
 }
 
-/* ===== ТЕМА: ТЁМНАЯ ===== */
+/* ===== ТЕМА: ТЁМНАЯ (исправлена) ===== */
 [data-theme="dark"] {
     background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
-    color: #e6edf3;
+    color: #f0f6fc;
 }
 
 [data-theme="dark"] .container {
-    background: rgba(22, 27, 34, 0.92);
+    background: rgba(22, 27, 34, 0.95);
     backdrop-filter: blur(20px);
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.06);
@@ -80,44 +80,33 @@ body {
     background: #1c2333;
 }
 
-[data-theme="dark"] .feature .icon {
-    color: #58a6ff;
-}
-
-[data-theme="dark"] .download-btn .btn-title {
-    color: #e6edf3;
-}
-
-[data-theme="dark"] .download-btn .btn-sub {
-    color: #8b949e;
+/* ===== ВСЕ ТЕКСТЫ В ТЁМНОЙ ТЕМЕ — СВЕТЛЫЕ ===== */
+[data-theme="dark"] .logo-text {
+    color: #f0f6fc;
 }
 
 [data-theme="dark"] .tagline {
-    color: #c9d1d9;
-}
-
-[data-theme="dark"] footer {
-    color: #8b949e;
-}
-
-[data-theme="dark"] .logo-text {
-    color: #e6edf3;
-}
-
-[data-theme="dark"] .hero-desc {
-    color: #c9d1d9;
-}
-
-[data-theme="dark"] .screenshot-card p {
-    color: #c9d1d9;
+    color: #d4dce8;
 }
 
 [data-theme="dark"] .hero h1 {
     color: #f0f6fc;
 }
 
-[data-theme="dark"] .download-section h2 {
+[data-theme="dark"] .hero-desc {
+    color: #d4dce8;
+}
+
+[data-theme="dark"] .about h2 {
     color: #f0f6fc;
+}
+
+[data-theme="dark"] .about p {
+    color: #d4dce8;
+}
+
+[data-theme="dark"] .about-features {
+    color: #d4dce8;
 }
 
 [data-theme="dark"] .feature h3 {
@@ -125,10 +114,34 @@ body {
 }
 
 [data-theme="dark"] .feature p {
-    color: #c9d1d9;
+    color: #d4dce8;
 }
 
-[data-theme="dark"] .btn-arrow {
+[data-theme="dark"] .feature .icon {
+    color: #58a6ff;
+}
+
+[data-theme="dark"] .download-section h2 {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .download-btn .btn-title {
+    color: #f0f6fc;
+}
+
+[data-theme="dark"] .download-btn .btn-sub {
+    color: #b0b8c4;
+}
+
+[data-theme="dark"] .download-btn .btn-arrow {
+    color: #b0b8c4;
+}
+
+[data-theme="dark"] .screenshot-card p {
+    color: #d4dce8;
+}
+
+[data-theme="dark"] footer {
     color: #8b949e;
 }
 
@@ -170,7 +183,7 @@ body {
 
 .tagline {
     font-size: 16px;
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 /* ===== ГЕРОЙ ===== */
@@ -197,8 +210,33 @@ body {
 
 .hero-desc {
     font-size: 18px;
-    opacity: 0.8;
+    opacity: 0.85;
     margin-top: 6px;
+}
+
+/* ===== О ПРИЛОЖЕНИИ ===== */
+.about {
+    margin: 30px 0 20px;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.about h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.about-features {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.85;
 }
 
 /* ===== СКРИНШОТЫ ===== */
@@ -296,7 +334,7 @@ body {
 
 .feature p {
     font-size: 13px;
-    opacity: 0.75;
+    opacity: 0.8;
 }
 
 /* ===== КНОПКИ СКАЧИВАНИЯ ===== */
@@ -337,7 +375,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 60%);
     opacity: 0;
     transition: 0.4s;
 }
@@ -353,20 +391,20 @@ body {
 
 .download-btn.windows {
     border-color: #0078d4;
-    background: rgba(0, 120, 212, 0.1);
+    background: rgba(0, 120, 212, 0.12);
 }
 
 .download-btn.windows:hover {
-    background: rgba(0, 120, 212, 0.2);
+    background: rgba(0, 120, 212, 0.22);
 }
 
 .download-btn.android {
     border-color: #3ddc84;
-    background: rgba(61, 220, 132, 0.1);
+    background: rgba(61, 220, 132, 0.12);
 }
 
 .download-btn.android:hover {
-    background: rgba(61, 220, 132, 0.2);
+    background: rgba(61, 220, 132, 0.22);
 }
 
 .btn-icon {
@@ -391,7 +429,7 @@ body {
 
 .btn-arrow {
     font-size: 20px;
-    opacity: 0.4;
+    opacity: 0.5;
     transition: 0.3s;
     margin-left: auto;
 }
@@ -451,5 +489,13 @@ footer {
         width: 44px;
         height: 44px;
         font-size: 20px;
+    }
+
+    .about {
+        padding: 12px;
+    }
+
+    .about p {
+        font-size: 14px;
     }
 }
