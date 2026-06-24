@@ -445,7 +445,100 @@ footer {
     font-size: 14px;
     opacity: 0.6;
 }
+/* ===== АККОРДЕОН ===== */
+.accordion-wrapper {
+    margin: 20px auto 10px;
+    max-width: 600px;
+}
 
+.accordion-btn {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    transition: all 0.3s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+[data-theme="light"] .accordion-btn {
+    background: rgba(247, 249, 252, 0.9);
+    color: #1a1a2e;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .accordion-btn:hover {
+    background: #e2e8f0;
+    transform: translateY(-2px);
+}
+
+[data-theme="dark"] .accordion-btn {
+    background: rgba(28, 35, 51, 0.85);
+    color: #f0f6fc;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .accordion-btn:hover {
+    background: #2d3748;
+    transform: translateY(-2px);
+}
+
+.accordion-arrow {
+    font-size: 14px;
+    transition: transform 0.4s ease;
+    margin-left: auto;
+}
+
+.accordion-arrow.open {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.4s ease, margin 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.accordion-content.open {
+    max-height: 600px;
+    opacity: 1;
+    margin-top: 12px;
+}
+
+.about {
+    padding: 20px 24px;
+    border-radius: 16px;
+    text-align: left;
+}
+
+[data-theme="light"] .about {
+    background: rgba(247, 249, 252, 0.9);
+}
+
+[data-theme="dark"] .about {
+    background: rgba(28, 35, 51, 0.85);
+}
+
+.about p {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.9;
+}
+
+.about-features {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 1.9;
+    opacity: 0.85;
+}
 /* ===== АДАПТИВ ===== */
 @media (max-width: 600px) {
     .container {
