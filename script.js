@@ -22,7 +22,7 @@ function updateButton(theme) {
 // ===== ССЫЛКИ НА СКАЧИВАНИЕ =====
 const DOWNLOAD_LINKS = {
     windows: 'https://drive.google.com/drive/folders/1vGqve4XARI83IGWP935jA4K77i6wTGDU?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto',
-    android: '#'
+    android: 'https://iterpugov0-sketch.github.io/Burmaldomop/downloads/app-release.apk'
 };
 
 document.getElementById('downloadWindows').href = DOWNLOAD_LINKS.windows;
