@@ -15,7 +15,7 @@ body {
     transition: background 0.4s, color 0.4s;
 }
 
-/* ===== ТЕМА: СВЕТЛАЯ (парошвабры — пар, чистота) ===== */
+/* ===== ТЕМА: СВЕТЛАЯ ===== */
 [data-theme="light"] {
     background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 50%, #90caf9 100%);
     color: #0d47a1;
@@ -92,7 +92,7 @@ body {
     border-color: rgba(13, 71, 161, 0.15);
 }
 
-/* ===== ТЕМА: ТЁМНАЯ (парошвабры — глубина, пар) ===== */
+/* ===== ТЕМА: ТЁМНАЯ ===== */
 [data-theme="dark"] {
     background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 50%, #1a237e 100%);
     color: #e3f2fd;
@@ -257,6 +257,7 @@ body {
     padding: 0 4px;
 }
 
+/* ===== КНОПКА "О ПРИЛОЖЕНИИ" С ПОДСВЕТКОЙ ===== */
 .accordion-btn {
     width: 100%;
     padding: 14px 20px;
@@ -269,8 +270,50 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     font-family: 'Segoe UI', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+/* Светлая тема — голубая подсветка */
+[data-theme="light"] .accordion-btn::before {
+    background: radial-gradient(circle at 50% 50%, rgba(13, 71, 161, 0.25), transparent 70%);
+}
+
+[data-theme="light"] .accordion-btn:hover::before {
+    opacity: 1;
+}
+
+[data-theme="light"] .accordion-btn:hover {
+    box-shadow: 0 0 30px rgba(13, 71, 161, 0.15), 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Тёмная тема — голубая подсветка */
+[data-theme="dark"] .accordion-btn::before {
+    background: radial-gradient(circle at 50% 50%, rgba(100, 181, 246, 0.3), transparent 70%);
+}
+
+[data-theme="dark"] .accordion-btn:hover::before {
+    opacity: 1;
+}
+
+[data-theme="dark"] .accordion-btn:hover {
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.15), 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .accordion-arrow {
@@ -336,7 +379,7 @@ body {
     transform: scale(1.1) rotate(10deg);
 }
 
-/* ===== ФИЧИ ===== */
+/* ===== ФИЧИ С ПОДСВЕТКОЙ ===== */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -347,11 +390,51 @@ body {
 .feature {
     padding: 16px 14px;
     border-radius: 16px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.feature:hover {
+.feature::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 18px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: -1;
+}
+
+/* Светлая тема — голубая подсветка */
+[data-theme="light"] .feature::before {
+    background: radial-gradient(circle at 50% 50%, rgba(13, 71, 161, 0.2), transparent 70%);
+}
+
+[data-theme="light"] .feature:hover::before {
+    opacity: 1;
+}
+
+[data-theme="light"] .feature:hover {
     transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(13, 71, 161, 0.1), 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+/* Тёмная тема — голубая подсветка */
+[data-theme="dark"] .feature::before {
+    background: radial-gradient(circle at 50% 50%, rgba(100, 181, 246, 0.2), transparent 70%);
+}
+
+[data-theme="dark"] .feature:hover::before {
+    opacity: 1;
+}
+
+[data-theme="dark"] .feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(100, 181, 246, 0.1), 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 .feature .icon {
@@ -402,7 +485,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* ===== ОБЩАЯ ПОДСВЕТКА (GLOW) ДЛЯ КНОПОК ===== */
 .download-btn::before {
     content: '';
     position: absolute;
@@ -429,7 +511,7 @@ body {
 .download-btn.windows:hover {
     background: rgba(13, 71, 161, 0.18);
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 0 25px rgba(13, 71, 161, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(13, 71, 161, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn.windows:hover::before {
@@ -449,14 +531,13 @@ body {
 .download-btn.android:hover {
     background: rgba(66, 165, 245, 0.18);
     transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 0 25px rgba(66, 165, 245, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(66, 165, 245, 0.25), 0 12px 30px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn.android:hover::before {
     opacity: 1;
 }
 
-/* ===== СТАРЫЙ ЭФФЕКТ ===== */
 .download-btn::after {
     content: '';
     position: absolute;
@@ -516,7 +597,6 @@ footer {
 /* ===== АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ===== */
 /* ======================================== */
 
-/* Планшеты и маленькие ноутбуки */
 @media (max-width: 768px) {
     .container {
         padding: 30px 20px;
@@ -545,7 +625,6 @@ footer {
     }
 }
 
-/* Телефоны (до 480px) */
 @media (max-width: 480px) {
     body {
         padding: 10px;
@@ -674,7 +753,6 @@ footer {
     }
 }
 
-/* Очень маленькие телефоны (до 360px) */
 @media (max-width: 360px) {
     .container {
         padding: 16px 10px;
