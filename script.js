@@ -19,15 +19,6 @@ function updateButton(theme) {
     toggleBtn.textContent = theme === 'light' ? '🌙' : '☀️';
 }
 
-// ===== ССЫЛКИ НА СКАЧИВАНИЕ =====
-const DOWNLOAD_LINKS = {
-    windows: '#',
-    android: '#'
-};
-
-document.getElementById('downloadWindows').href = DOWNLOAD_LINKS.windows;
-document.getElementById('downloadAndroid').href = DOWNLOAD_LINKS.android;
-
 // ===== АККОРДЕОН "О ПРИЛОЖЕНИИ" =====
 const accordionBtn = document.getElementById('accordionBtn');
 const accordionContent = document.getElementById('accordionContent');
