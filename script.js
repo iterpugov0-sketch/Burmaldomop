@@ -21,15 +21,13 @@ function updateButton(theme) {
 }
 
 // ===== ССЫЛКИ НА СКАЧИВАНИЕ =====
-// ⚠️ ЗАМЕНИТЕ ЭТИ ССЫЛКИ НА РЕАЛЬНЫЕ ИЗ R2 ПОСЛЕ ЗАГРУЗКИ ФАЙЛОВ
+// ⚠️ ЗАМЕНИТЕ НА РЕАЛЬНЫЕ ССЫЛКИ ПОСЛЕ ЗАГРУЗКИ ФАЙЛОВ
 const DOWNLOAD_LINKS = {
-    windows: 'https://pub-....r2.dev/paroshvabry.exe',
-    android: 'https://pub-....r2.dev/paroshvabry.apk'
+    windows: '#',
+    android: '#'
 };
 
 document.getElementById('downloadWindows').href = DOWNLOAD_LINKS.windows;
 document.getElementById('downloadAndroid').href = DOWNLOAD_LINKS.android;
 
 console.log('🚀 Paroshvabry лендинг загружен!');
-console.log('📱 Android:', DOWNLOAD_LINKS.android);
-console.log('🪟 Windows:', DOWNLOAD_LINKS.windows);
