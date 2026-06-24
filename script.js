@@ -2,7 +2,6 @@
 const toggleBtn = document.getElementById('themeToggle');
 const html = document.documentElement;
 
-// Проверяем сохранённую тему
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
 updateButton(savedTheme);
@@ -21,7 +20,6 @@ function updateButton(theme) {
 }
 
 // ===== ССЫЛКИ НА СКАЧИВАНИЕ =====
-// ⚠️ ЗАМЕНИТЕ НА РЕАЛЬНЫЕ ССЫЛКИ ПОСЛЕ ЗАГРУЗКИ ФАЙЛОВ
 const DOWNLOAD_LINKS = {
     windows: '#',
     android: '#'
@@ -30,11 +28,9 @@ const DOWNLOAD_LINKS = {
 document.getElementById('downloadWindows').href = DOWNLOAD_LINKS.windows;
 document.getElementById('downloadAndroid').href = DOWNLOAD_LINKS.android;
 
-console.log('🚀 Paroshvabry лендинг загружен!');
 // ===== АККОРДЕОН "О ПРИЛОЖЕНИИ" =====
 const accordionBtn = document.getElementById('accordionBtn');
 const accordionContent = document.getElementById('accordionContent');
-const accordionArrow = document.querySelector('.accordion-arrow');
 let isOpen = false;
 
 accordionBtn.addEventListener('click', () => {
@@ -42,7 +38,7 @@ accordionBtn.addEventListener('click', () => {
     
     if (isOpen) {
         accordionContent.classList.add('open');
-        accordionArrow.classList.add('open');
+        accordionBtn.querySelector('.accordion-arrow').classList.add('open');
         accordionBtn.innerHTML = `
             <span class="accordion-icon">📖</span>
             О приложении
@@ -50,7 +46,7 @@ accordionBtn.addEventListener('click', () => {
         `;
     } else {
         accordionContent.classList.remove('open');
-        accordionArrow.classList.remove('open');
+        accordionBtn.querySelector('.accordion-arrow').classList.remove('open');
         accordionBtn.innerHTML = `
             <span class="accordion-icon">📖</span>
             О приложении
@@ -58,3 +54,5 @@ accordionBtn.addEventListener('click', () => {
         `;
     }
 });
+
+console.log('🚀 Paroshvabry лендинг загружен!');
